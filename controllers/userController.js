@@ -21,14 +21,14 @@ module.exports = {
             .catch((err) => res.status(500).json(err));
     },
 
-    //For creating a new user
+    // For creating a new user
     createUser(req, res) {
         User.create(req.body)
             .then((user) => res.json(user))
             .catch((err) => res.status(500).json(err));
     },
 
-    //For updating a user
+    // For updating a user
     updateUser(req, res) {
         User.findOneAndUpdate(
             { _id: req.params.userId },
@@ -71,7 +71,7 @@ module.exports = {
             .catch((err) => res.status(500).json(err));
     },
 
-    //For removing a friend to user
+    // For removing a friend to user
     removeFriend(req, res) {
         User.findOneAndUpdate(
             { _id: req.params.userId },
@@ -85,4 +85,5 @@ module.exports = {
             )
             .catch((err) => res.status(500).json(err));
     },
+
 };
